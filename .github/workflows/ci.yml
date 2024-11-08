@@ -5,4 +5,5 @@ jobs:
     uses: devops-i1/github-reusable-workflow/.github/workflows/ci.yml@main
     with:
       project_name: backend-expense
+      npm_install: true
     secrets: inherit
