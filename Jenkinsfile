@@ -42,16 +42,19 @@ pipeline {
         echo 'Hello World'
       }
     }
+    stage('Parallel Stage') {
+      parallel {
 
-    stage('Example2') {
-      steps {
-        echo 'Hello World'
-      }
-    }
-
-    stage('Example3') {
-      steps {
-        echo 'Hello World'
+        stage('Example2') {
+          steps {
+            echo 'Hello World'
+          }
+        }
+        stage('Example3') {
+          steps {
+            echo 'Hello World'
+          }
+        }
       }
     }
   }
