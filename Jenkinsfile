@@ -25,13 +25,14 @@ pipeline {
       }
     }
 
-    stage('Sonar Scan') {
+    stage('Sonar Scan code review') {
       steps {
         echo 'Sonar Scan'
       }
     }
 
     stage('Release Software') {
+      when { buildingTag() }
       steps {
         echo 'Release Software'
       }
