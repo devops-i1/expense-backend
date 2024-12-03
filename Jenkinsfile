@@ -6,13 +6,9 @@ pipeline {
   }
 
   stages {
+
     stage('Lint Code') {
-      when {
-        allOf {
-          not { buildingTag() }
-          branch 'main'
-        }
-      }
+      when { not { buildingTag() } }
       steps {
         echo 'Lint Code'
       }
@@ -33,12 +29,7 @@ pipeline {
     }
 
     stage('Sonar Scan code review') {
-      when {
-        allOf {
-          not { buildingTag() }
-          branch 'main'
-        }
-      }
+      when { not { buildingTag() } }
       steps {
         echo 'Sonar Scan'
       }
