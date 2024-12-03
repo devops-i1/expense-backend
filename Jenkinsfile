@@ -31,6 +31,13 @@ pipeline {
       }
     }
 
+    stage('Build Code') {
+      when { buildingTag() }
+      steps {
+        echo 'Build Code'
+      }
+    }
+
     stage('Release Software') {
       when { buildingTag() }
       steps {
