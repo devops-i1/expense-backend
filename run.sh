@@ -1,3 +1,5 @@
+source /data/secrets
+
 if [ -z "$DB_HOST" ]; then
   echo Environment Variable DB_HOST is mising
   exit 1
